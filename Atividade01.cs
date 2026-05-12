@@ -6,6 +6,14 @@ informar se o aluno foi aprovado, ficou em recuperação ou foi reprovado.
 Código iniciado, o método LerNota ( ) é chamado, ele leva a string como mensagem 9Nota 1:; Nota 2: ...
 */
 
+/* using System.Data;
+
+static string LerNomeAluno(string nome)
+{
+    Console.WriteLine(nome);
+    return nome;
+
+}
 static double LerNota(string mensagem)
 {
     Console.Write(mensagem);
@@ -13,7 +21,6 @@ static double LerNota(string mensagem)
 
     return nota;
 }
-
 
 static void ExecutarSistema()
 {
@@ -30,4 +37,15 @@ static void ExecutarSistema()
     ExibirResultado(nome, media, situacao);
 }
 
-ExecutarSistema();
+ExecutarSistema(); */
+/* ## Requisitos do programa
+
+Crie um programa em C# que possua, no mínimo, os seguintes métodos:
+
+```csharp
+static string LerNomeAluno(){}
+static double LerNota(string mensagem){}
+static double CalcularMedia(double nota1, double nota2, double nota3){}
+static string VerificarSituacao(double media)
+static void ExibirResultado(string nome, double media, string situacao){}
+``` */
