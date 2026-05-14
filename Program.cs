@@ -143,23 +143,23 @@ static void ExecutarConversor()
 ExecutarConversor(); */
 
 /*4- */
-static string Cliente(string cliente)
+static string Cliente()
 {
     Console.Write("Digite o nome do cliente: ");
-    cliente = Console.ReadLine()!;
+    string cliente = Console.ReadLine()!;
     return cliente;
 }
 
-static double ValorDaCompra(double valorCompra)
+static double ValorDaCompra()
 {
     Console.Write("Digite o valor da compra: ");
-    valorCompra = double.Parse(Console.ReadLine()!);
+    double valorCompra = double.Parse(Console.ReadLine()!);
     return valorCompra;
 }
 
-static double CalcularDesconto(double desconto, double valorCompra)
+static double CalcularDesconto(double valorCompra)
 {
-    desconto = 0;
+    double desconto = 0;
     if (valorCompra >= 200)
     {
         desconto = valorCompra * 0.15;
@@ -172,22 +172,32 @@ static double CalcularDesconto(double desconto, double valorCompra)
 }
 
 
-static void ValorFinal(double valorFinal, double valorCompra, double desconto)
+static double ValorFinal(double valorCompra, double desconto)
 {
-    valorCompra = ValorDaCompra(valorCompra);
-    desconto = ValorDaCompra(valorCompra);
+    double valorFinal = valorCompra - desconto;
+    return valorFinal;
+}
 
-    valorFinal = valorCompra - desconto;
+static void ExibirResultado(string cliente, double valorCompra, double desconto, double valorFinal)
+{
+    Console.WriteLine($"Cliente: {cliente}");
+    Console.WriteLine($"Valor da compra: R$ {valorCompra:F2}");
+    Console.WriteLine($"Desconto: R$ {desconto:F2}");
+    Console.WriteLine($"Valor final: R$ {valorFinal:F2}");
 }
 
 static void ExecutarSistema()
 {
-    string cliente = Cliente("cliente");
-    double valorCompra = ValorDaCompra(valorCompra);
-    Console.WriteLine($"Cliente: {cliente}");
-    Console.WriteLine($"Valor da compra: R$ {valorCompra:F2}");
-    Console.WriteLine($"Desconto: R$ {calcularDesconto:F2}");
-    Console.WriteLine($"Valor final: R$ {valorFinal:F2}");
+    string cliente = Cliente();
+
+    double valorCompra = ValorDaCompra();
+    double desconto = CalcularDesconto(valorCompra);
+    double valorFinal = ValorFinal(valorCompra, desconto);
+
+    ExibirResultado(cliente, valorCompra, desconto, valorFinal);
 }
+
+Console.Clear();
+
 ExecutarSistema();
 
