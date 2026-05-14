@@ -197,7 +197,5 @@ static void ExecutarSistema()
     ExibirResultado(cliente, valorCompra, desconto, valorFinal);
 }
 
-Console.Clear();
-
 ExecutarSistema();
 
