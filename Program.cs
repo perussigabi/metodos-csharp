@@ -75,7 +75,59 @@ static void ExecutarSistema()
 ExecutarSistema();*/
 
 
+/* 2 
+static int LerNumeroTabuada()
+{
+    Console.Write("Digite um número para a tabuada");
+    int numero = int.Parse(Console.ReadLine()!);
+    return numero;
+}
+static void ExibirTabuada(int numero)
+{
+    Console.WriteLine();
+    int contador = 1;
+    while (contador <= 10)
+    {
+        Console.WriteLine($"{numero} x {contador} = {numero * contador}");
+        contador++;
+    }
+    Console.WriteLine();
+}
 
+static string LerContinuacao()
+{
+    Console.WriteLine("Deseja continuar outra tabuada? s/n: ");
+    string resposta = Console.ReadLine()!;
+    return resposta;
+}
+static bool DesejaContinuar(string resposta)
+{
+    if (resposta == "s" || resposta == "S")
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+static void ExecutarTabuada()
+{
+    Console.Clear();
+    int numero = LerNumeroTabuada();
+    ExibirTabuada(numero);
+    string resposta = LerContinuacao();
+    if (DesejaContinuar(resposta))
+    {
+        ExecutarTabuada();
+    }
+    else
+    {
+        Console.WriteLine();
+        Console.WriteLine("Programa encerrado.");
+    }
+}
+ExecutarTabuada(); */
 
 
 
@@ -142,7 +194,7 @@ static void ExecutarConversor()
 
 ExecutarConversor(); */
 
-/*4- */
+/*4- 
 static string Cliente()
 {
     Console.Write("Digite o nome do cliente: ");
@@ -197,5 +249,85 @@ static void ExecutarSistema()
     ExibirResultado(cliente, valorCompra, desconto, valorFinal);
 }
 
-ExecutarSistema();
+ExecutarSistema(); */
+
+/*5-
+double numero1;
+double numero2;
+double resultado = 0;
+string opcao;
+string continuar = "s";
+
+static double Somar(double numero1, double numero2, double resultado)
+{
+    resultado = numero1 + numero2;
+    return resultado;
+}
+
+static double Subtrair(double numero1, double numero2, double resultado)
+{
+    resultado = numero1 - numero2;
+    return resultado;
+}
+
+static double Multiplicar(double numero1, double numero2, double resultado)
+{
+    resultado = numero1 * numero2;
+    return resultado;
+}
+
+static double Dividir(double numero1, double numero2, double resultado)
+{
+    resultado = numero1 / numero2;
+    return resultado;
+}
+
+while (continuar == "s" || continuar == "S")
+{
+    Console.Clear();
+    Console.WriteLine("=== CALCULADORA ===");
+    Console.WriteLine("+ Soma");
+    Console.WriteLine("- Subtração");
+    Console.WriteLine("* Multiplicação");
+    Console.WriteLine("/ Divisão");
+    Console.Write("Escolha uma opção: ");
+    opcao = Console.ReadLine()!;
+
+    Console.Write("Digite o primeiro número: ");
+    numero1 = double.Parse(Console.ReadLine()!);
+
+    Console.Write("Digite o segundo número: ");
+    numero2 = double.Parse(Console.ReadLine()!);
+
+    if (opcao == "+")
+    {
+        resultado = Somar(numero1, numero2, resultado);
+        Console.WriteLine($"Resultado da soma: {resultado}");
+    }
+    else if (opcao == "-")
+    {
+        resultado = Subtrair(numero1, numero2, resultado);
+        Console.WriteLine($"Resultado da subtração: {resultado}");
+    }
+    else if (opcao == "*")
+    {
+        resultado = Multiplicar(numero1, numero2, resultado);
+        Console.WriteLine($"Resultado da multiplicação: {resultado}");
+    }
+    else if (opcao == "/")
+    {
+        resultado = Dividir(numero1, numero2, resultado);
+        Console.WriteLine($"Resultado da divisão: {resultado}");
+    }
+    else
+    {
+        Console.WriteLine("Opção inválida.");
+    }
+
+    Console.WriteLine();
+    Console.Write("Deseja fazer outro cálculo? (s/n): ");
+    continuar = Console.ReadLine()!;
+}
+
+Console.Write("Fim de programa!!"); */
 
